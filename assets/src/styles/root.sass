@@ -1,0 +1,87 @@
+@use "../tools/functions" as *
+
+:root
+	// js-variables
+	// --fixed-menu-h: af-1920-1024(373, 700)
+	--fixed-menu-h: 700px
+	// fonts
+	--font-default: system-ui, sans-serif
+
+	// colors
+	--c-primary: #2E275D
+	--c-secondary: rgba(46, 39, 93, 0.60)
+	--c-tertiary: #6B61C1
+
+	--bg-page: #FAFAFB
+	--bg-card: #FAFAFB
+	--bg-chip: rgba(46, 39, 93, 0.04)
+	--bg-chip-active: rgba(225, 222, 245, 0.80)
+	--bg-accent-soft: rgba(225, 222, 245, 0.40)
+
+	--container-pad-lg: 48px
+	--container-pad-md: 24px
+	--container-pad-sm: 16px
+
+	// spacing
+	--space-xxs: 4px
+	--space-xs: 8px
+	--space-sm: 12px
+	--space-md: var(--container-pad-sm)
+	--space-lg: var(--container-pad-md)
+	--space-xl: 32px
+	--space-xxl: var(--container-pad-lg)
+
+	--pad-xxs: 8px
+	--pad-xs: 12px
+	--pad-sm: var(--container-pad-sm)
+	--pad-md: var(--container-pad-md)
+	--pad-lg: var(--container-pad-lg)
+	--pad-xl: 68px
+	--pad-xxl: 96px
+
+	// семантика
+	--space-section: var(--space-lg)
+	--space-block: var(--space-md)
+
+	// motion
+	--dur-fast: .2s
+	--dur-base: .35s
+	--dur-slow: .4s
+	--ease: cubic-bezier(0.25, 0.1, 0.25, 1)
+
+	// typography (base)
+	--fw-extra-light: 200
+	--fw-light: 300
+	--fw-regular: 400
+	--fw-medium: 500
+	--fw-bold: 700
+
+	--fs-xs: 24px
+	--fs-sm: 28px
+	--fs-md: 32px
+	--fs-lg: 48px
+	--fs-xl: 64px
+
+	--lh-xs: 1.1
+	--lh-sm: 1.2
+	--lh-md: 1.3
+	--lh-lg: 1.4
+	--lh-xl: 1.5
+
+	--ls-tight: -0.02em
+	--ls-normal: 0
+
+	// radiuses
+	--radius-xs: 12px
+	--radius-sm: 16px
+	--radius-md: 24px
+	--radius-lg: 100px
+	--radius-xl: 840px
+	--radius-xxl: 1000px
+
+	--shadow-sm: 0 4px 12px 0 rgba(46, 39, 93, 0.04)
+	--shadow-md: 0 12px 24px 0 rgba(46, 39, 93, 0.04)
+	--shadow-lg: 0 24px 48px 0 rgba(46, 39, 93, 0.08)
+
+	// breakpoints (documented)
+	--bp-md: 769px

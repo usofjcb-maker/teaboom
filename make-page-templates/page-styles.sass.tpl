@@ -1,0 +1,2 @@
+.${pageName}
+	margin: 0

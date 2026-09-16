@@ -1,0 +1,560 @@
+.header-section
+	width: 100%
+	z-index: 99999
+	position: relative
+	background-color: #fff
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+	line-height: 1.5
+
+	a
+		color: inherit
+		text-decoration: none
+
+@font-face
+	font-family: 'themify'
+	src: url('../fonts/teaboom-icons/themify.woff2') format('woff2')
+	font-weight: normal
+	font-style: normal
+	font-display: block
+
+[class^="ti-"],
+[class*=" ti-"]
+	display: inline-block
+	font-family: 'themify'
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	speak: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.ti-shopping-cart::before
+	content: "\e60d"
+
+.bg-ivory
+	background-color: #fefcef
+
+.row
+	display: flex
+	flex-wrap: wrap
+	margin-right: -15px
+	margin-left: -15px
+
+.col,
+.col-lg-5,
+.col-lg-7,
+.col-xl-7
+	position: relative
+	width: 100%
+	min-height: 1px
+	padding-right: 15px
+	padding-left: 15px
+
+.col
+	flex-basis: 0
+	flex-grow: 1
+	max-width: 100%
+
+.align-items-center
+	align-items: center
+
+.justify-content-between
+	justify-content: space-between
+
+.justify-content-center
+	justify-content: center
+
+.pull-left
+	float: left
+
+.pull-right
+	float: right
+
+.mb-10
+	margin-bottom: 10px
+
+.pt-10
+	padding-top: 10px
+
+.pb-10
+	padding-bottom: 10px
+
+.mr-30
+	margin-right: 30px
+
+.pt-5
+	padding-top: 5px
+
+.d-none
+	display: none !important
+
+.d-inline-flex
+	display: inline-flex !important
+
+.order-12
+	order: 12
+
+.cache_time_mark
+	display: none
+
+.text-gray
+	color: gray
+
+.header-top
+	border-bottom: solid 1px #efefef
+
+	.justify-content-between > [class*=col]
+		flex-grow: 0
+		flex-basis: auto
+		width: auto
+
+	.justify-content-center > [class*=col]
+		&:first-child
+			justify-content: flex-start
+			display: flex
+
+		&:nth-child(2)
+			justify-content: center
+			display: flex
+
+		&:last-child
+			justify-content: flex-end
+			display: flex
+
+.custom-logo
+	display: block
+
+	img
+		height: 50px
+		width: auto
+
+	.text-logo
+		color: #2b2a29
+		padding-left: 6px
+
+		a
+			color: #2b2a29
+
+			&:hover
+				color: #2b2a29
+
+		.name
+			color: #2b2a29
+			font-size: 18px
+			font-weight: bold
+
+		.subtitle
+			color: #2b2a29
+			font-size: 12px
+			font-weight: normal
+			margin-top: 0
+			margin-bottom: 1rem
+
+.custom-header-contact
+	font-size: 12px
+
+	a
+		font-size: 12px
+
+	.header-phone,
+	.header-email
+		font-size: 12px
+		text-transform: none
+
+	small.open-hours
+		position: absolute
+		top: 0
+		color: gray
+
+.header-lan-curr
+	margin: -16px 0 0
+	padding: 0
+	line-height: 12px
+	list-style: none
+
+	> li
+		line-height: 12px
+		position: relative
+		display: inline-block
+		padding: 0 10px
+
+		&::before
+			position: absolute
+			right: -1px
+			width: 2px
+			height: 10px
+			top: 0
+			background-color: #444
+			content: ""
+
+		&:last-child::before
+			display: none
+
+		a
+			font-size: 13px
+			font-weight: 600
+			color: #444
+			text-transform: uppercase
+			line-height: 12px
+
+.header-shop-links
+	.header-shop-admin-links
+		display: inline
+
+		a i
+			font-size: .8em
+
+	a
+		color: #444
+		float: left
+		margin-right: 30px
+
+		&:hover
+			color: #202020
+
+		i
+			font-size: 24px
+			line-height: 30px
+			display: block
+			float: left
+
+			&.account-icon-header
+				font-size: 14px
+				display: block
+				background-color: #202020
+				color: #a6a6a6
+				float: left
+				width: 30px
+				height: 30px
+				border-radius: 50px
+				text-align: center
+				line-height: 30px
+				transition: all .3s ease 0s
+
+				&:hover
+					background-color: #f5d730
+					color: #202020
+
+		.number
+			width: 20px
+			height: 20px
+			border-radius: 50px
+			font-size: 12px
+			font-weight: 600
+			color: #202020
+			background-color: #f5d730
+			display: block
+			overflow: hidden
+			text-align: center
+			line-height: 20px
+			margin-top: 5px
+			position: relative
+			left: 0
+
+.header-bottom
+	background-color: #fff
+
+.main-menu
+	nav > ul
+		margin: 0
+		padding: 0
+		list-style: none
+
+		> li
+			display: block
+			float: left
+			margin-right: 20px
+			position: relative
+
+			&:last-child
+				margin-right: 0
+
+			> a
+				display: block
+				text-transform: uppercase
+				font-size: 16px
+				color: #606060
+				line-height: 100px
+
+			&.menu-item-has-children > a::after
+				font-family: FontAwesome
+				content: "\f107"
+				margin-left: 5px
+				float: right
+
+			&.active > a,
+			&:hover > a
+				color: #202020
+
+			&:hover > .mega-menu
+				opacity: 1
+				visibility: visible
+				margin-top: 0
+				z-index: 999
+
+	&.menu-3
+		nav > ul > li
+			&:last-child
+				margin-right: 0
+
+			> a
+				font-size: 14px
+				font-weight: bold
+
+			.mega-menu
+				left: -20px
+
+.gift-link
+	color: #c60
+
+	i
+		font-size: 1.2em
+
+.mega-menu
+	position: absolute
+	left: 0
+	top: 100%
+	display: flex
+	gap: 30px
+	min-width: 520px
+	margin-top: 30px
+	padding: 25px 30px
+	background-color: #fff
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .1)
+	opacity: 0
+	visibility: hidden
+	transition: all .3s ease 0s
+
+	li
+		float: none !important
+		margin: 0 !important
+		display: block
+
+	a
+		color: #606060
+		font-size: 13px
+		line-height: 28px
+		text-transform: none
+		white-space: nowrap
+
+		&:hover
+			color: #202020
+
+.header-advance-search
+	border: 1px solid #dcdcdc
+	padding: 3px
+	border-radius: 50px
+	display: inline-block
+	vertical-align: middle
+	position: relative
+	width: 90%
+
+	.input
+		border-right: 1px solid #dcdcdc
+		float: left
+		width: 79%
+
+		input
+			border: none
+			height: 37px
+			line-height: 25px
+			padding: 6px 16px
+			width: 100%
+			font-family: "Open Sans", sans-serif
+			font-size: 14px
+			color: #444
+			font-weight: 600
+			border-top-left-radius: 50px
+			border-bottom-left-radius: 50px
+
+			&::placeholder
+				font-weight: 200
+				color: gray
+
+	.submit
+		float: left
+		margin-left: 10px
+		width: 17%
+
+		button
+			border-top-right-radius: 50px
+			border-bottom-right-radius: 50px
+			background-color: #f5d730
+			color: #202020
+			border: none
+			width: 100%
+			height: 37px
+			text-align: center
+			cursor: pointer
+
+			i
+				line-height: 37px
+				display: block
+				font-size: 18px
+
+			&:hover
+				background-color: #202020
+				color: #f5d730
+
+.mobile-menu
+	flex: 1 0 100% !important
+
+@media (min-width: 576px)
+	.d-sm-inline-block
+		display: inline-block !important
+
+	.d-sm-block
+		display: block !important
+
+@media (min-width: 992px)
+	.col-lg-5
+		flex: 0 0 41.666667%
+		max-width: 41.666667%
+
+	.col-lg-7
+		flex: 0 0 58.333333%
+		max-width: 58.333333%
+
+	.order-lg-1
+		order: 1
+
+	.order-lg-3
+		order: 3
+
+	.d-lg-none
+		display: none !important
+
+	.d-lg-block
+		display: block !important
+
+	.header-bottom
+		border-bottom: 1px #eee solid
+
+@media (min-width: 1200px)
+	.col-xl-7
+		flex: 0 0 58.333333%
+		max-width: 58.333333%
+
+	.order-xl-1
+		order: 1
+
+	.order-xl-3
+		order: 3
+
+@media (min-width: 992px) and (max-width: 1199px)
+	.main-menu.menu-3 nav > ul > li
+		margin-right: 20px
+
+		> a
+			font-size: 12px
+
+	.header-advance-search .input input
+		font-size: 13px
+		font-weight: 400
+
+@media (max-width: 991px)
+	.search_container
+		width: 100% !important
+
+	.search-container
+		width: 100% !important
+
+	.custom-header-contact
+		justify-content: flex-end !important
+
+	.header-shop-links-wrap
+		display: flex
+		flex: 1 0 100%
+		margin-top: 5px !important
+		margin-bottom: -6px !important
+
+	.header-bottom.header-bottom-three .header-advance-search
+		position: relative
+		margin-top: 15px
+		margin-bottom: 15px
+		width: 100%
+
+		.input
+			width: 70% !important
+			border-right: none !important
+
+		.submit
+			position: absolute !important
+			right: 4px !important
+			top: 3px !important
+			width: 100px !important
+
+@media (max-width: 767px)
+	.header-shop-links-wrap
+		margin-top: 5px !important
+		margin-bottom: -5px !important
+		justify-content: flex-end !important
+
+	.custom-header-contact
+		.header-email-li
+			padding-right: 0
+
+		small.open-hours
+			right: 15px
+
+	.header-shop-links a i.account-icon-header
+		display: block !important
+		margin: 0
+		width: 24px
+		height: 24px
+		font-size: 11px
+		line-height: 24px
+
+@media (max-width: 604px)
+	.custom-header-contact
+		.header-phone-li
+			padding-right: 0
+			float: right
+
+			&::before
+				position: absolute
+				right: 0
+				width: 0
+				height: 0
+				top: 0
+				background-color: transparent
+				content: ""
+
+		.header-email-li
+			display: none
+
+@media (max-width: 479px)
+	.header-shop-links a
+		margin-right: 10px
+
+		i
+			font-size: 20px
+
+		.number
+			width: 16px
+			height: 16px
+			margin-top: 7px
+			font-size: 10px
+			line-height: 16px
+
+	.header-advance-search
+		.input
+			width: 100%
+			padding-right: 70px
+			border-right: none !important
+
+		.submit
+			position: absolute
+			right: 0
+			top: 0
+			width: 16%
+
+@media (max-width: 419px)
+	.header-shop-links-wrap
+		margin-top: 20px !important
+
+	.custom-header-contact small.open-hours
+		width: 100px !important
+		text-align: right

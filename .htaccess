@@ -1,0 +1,24 @@
+# Font MIME types
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+  AddType font/ttf .ttf
+  AddType font/otf .otf
+  AddType application/font-woff2 .woff2
+</IfModule>
+
+# Font CORS and long-term cache
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2?|ttf|otf|eot)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+  SetEnvIfNoCase Request_URI \.woff2$ no-gzip
+  AddOutputFilterByType DEFLATE text/css
+</IfModule>

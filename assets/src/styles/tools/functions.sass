@@ -1,0 +1,49 @@
+@use 'sass:math'
+
+$base-font-size: 16px !default
+// $min-viewport: 769px
+$min-viewport: 1024px
+$max-viewport: 1920px
+
+// CLAMP CALCULATOR
+@function to-rem($value)
+	@if unit($value) == 'rem'
+		@return $value
+	@if unit($value) == 'px' or unitless($value)
+		@return math.div($value * 1px, $base-font-size) * 1rem
+	@error "af-1920-1024(): Поддерживаются только px, rem или unitless (интерпретируются как px)"
+
+@function af-1920-1024($min-size, $max-size)
+	$min-rem: to-rem($min-size)
+	$max-rem: to-rem($max-size)
+
+	$min-num: math.div($min-rem, 1rem)
+	$max-num: math.div($max-rem, 1rem)
+
+	// Приводим viewport-значения к числам без единиц
+	$min-vw: math.div($min-viewport, 1px)
+	$max-vw: math.div($max-viewport, 1px)
+	$base-font: math.div($base-font-size, 1px)
+
+	$min-vw-rem: math.div($min-vw, $base-font)
+	$max-vw-rem: math.div($max-vw, $base-font)
+
+	$slope: math.div($max-num - $min-num, $max-vw-rem - $min-vw-rem)
+	$intercept: $min-num - $slope * $min-vw-rem
+	$slope-vw: $slope * 100
+
+	// Обход бага с 0rem
+	$intercept: if(abs($intercept) < 0.00001, 0.0001, $intercept)
+
+	$min-clamp: if($min-num < $max-num, $min-num, $max-num)
+	$max-clamp: if($min-num > $max-num, $min-num, $max-num)
+
+	@return unquote("clamp(#{$min-clamp}rem, calc(#{$intercept}rem + #{$slope-vw}vw), #{$max-clamp}rem)")
+
+@mixin max($width)
+	@media (max-width: $width - 1)
+		@content
+
+@mixin min($width)
+	@media (min-width: $width)
+		@content

@@ -1,0 +1,579 @@
+@use "../tools/functions" as *
+
+.popups_links
+	padding: 200px 50px
+	a
+		display: block
+		width: fit-content
+
+.fancybox-overlay
+	background-image: none
+	background: rgba(9, 25, 47, .56) repeat
+
+.fancybox__container
+	.fancybox__backdrop
+		background: rgba(0, 0, 0, 0.40)
+
+.fancybox-close
+	top: 1.8rem
+	right: 1.8rem
+	width: 1.8rem
+	height: 1.8rem
+	background-image: none
+	&:after
+		content: ""
+		//@include abs
+		width: 1.8rem
+		height: .2rem
+		background: #fff
+		transform: rotate(45deg)
+	&:before
+		content: ""
+		//@include abs
+		width: 1.8rem
+		height: .2rem
+		background: #fff
+		transform: rotate(-45deg)
+
+.nnvg
+	.fancybox-button--arrow_left,
+	.fancybox-button--arrow_right
+		display: none !important
+	.fancybox-button
+		svg
+			color: #000
+			display: none
+			background: url(../img/bcl.svg) no-repeat 0 0
+			width: 2.9rem
+			height: 3rem
+			top: 5rem
+			right: 5rem
+	.fancybox-slide--html
+		padding: 0
+
+.fancybox__container
+	@include max($bp-laptop)
+		.fancybox__slide
+			justify-content: end
+			padding: 0
+			&::before,
+			&::after
+				display: none
+			.is-close-btn
+				display: none
+	&:not(.is-compact)
+		.fancybox__slide
+			@include max($bp-laptop)
+				justify-content: end
+				&::before,
+				&::after
+					display: none
+				.is-close-btn
+					display: none
+			&.has-close-btn
+				padding: 0 !important
+
+.win_popup
+	height: 100vh
+	width: af-1920-1024(310, 425)
+	right: auto
+	left: 0
+	top: 0
+	bottom: 0
+	margin: auto
+	position: relative
+	overflow: visible
+	background: 0 0
+	padding: 0 !important
+	margin-right: auto !important
+	margin-left: 0 !important
+	@include max($bp-laptop)
+		width: 100vw
+		height: auto
+		max-height: 100vh
+		overflow: auto
+		top: auto
+		margin-bottom: 0 !important
+	.cls_pp
+		position: absolute
+		right: af-1920-1024(15, 20)
+		top: af-1920-1024(27, 36)
+		width: af-1920-1024(17, 46)
+		height: af-1920-1024(17, 46)
+		border-radius: 100%
+		z-index: 10
+		background: 0 0
+		border: 0
+		cursor: pointer
+		transition: $default-transition
+		display: flex
+		align-items: center
+		justify-content: center
+		--icon-fill: #{$g}
+		@include max($bp-laptop)
+			right: 24px
+			top: 24px
+			width: 22px
+			height: 22px
+		@media(min-width: 769px)
+			&:hover
+				transition: $default-transition
+		svg
+			width: af-1920-1024(17, 22)
+			height: auto
+			@include max($bp-laptop)
+				width: 22px
+	.popup_inner
+		background: #fff
+		height: 100%
+		width: 100%
+		max-width: 100%
+		padding: af-1920-1024(28, 40) af-1920-1024(15, 20) af-1920-1024(28, 40) af-1920-1024(28, 40)
+		display: flex
+		flex-direction: column
+		// align-items: flex-end
+		justify-content: flex-end
+		position: relative
+		margin: auto
+		@include max($bp-laptop)
+			padding: 24px 25px 40px
+			max-height: 100vh
+			overflow: auto
+		.popup_desc
+			display: flex
+			flex-direction: column
+			margin-bottom: af-1920-1024(58, 78)
+			@include max($bp-laptop)
+				margin-bottom: 35px
+			&.thank_you
+				padding-top: af-1920-1024(177, 210)
+				height: 100%
+				@include max($bp-laptop)
+					padding-top: 140px
+			&:last-child
+				margin-bottom: 0
+			.h2
+				margin-bottom: af-1920-1024(15, 20)
+				color: $b
+				@include max($bp-laptop)
+					margin-bottom: 20px
+				&:last-child
+					margin-bottom: 0
+			p
+				color: $b
+			.back_link
+				grid-column: 2
+				width: 100%
+				display: inline-flex
+				align-items: center
+				justify-content: flex-start
+				padding: af-1920-1024(8, 11) af-1920-1024(15, 20)
+				background: $g
+				border: 0
+				cursor: pointer
+				color: $w
+				transition: .35s
+				--icon-fill: #{$w}
+				position: relative
+				@include max($bp-laptop)
+					padding: 13px 20px
+					margin-top: 166px
+				@media(hover: hover)
+					&:hover
+						transition: .35s
+						background: $r
+				svg
+					bottom: 0
+					top: 0
+					right: af-1920-1024(15, 20)
+					margin: auto
+					position: absolute
+					width: af-1920-1024(9, 19)
+					height: af-1920-1024(10, 20)
+					@include max($bp-laptop)
+						right: 20px
+						width: 11px
+						height: 11px
+			a,
+			button
+				margin-top: auto
+		form
+			.form_rows
+				margin-bottom: af-1920-1024(15, 20)
+				@include max($bp-laptop)
+					margin-bottom: 20px
+				&:last-child
+					margin-bottom: 0
+				&.files
+					margin-top: af-1920-1024(71, 100)
+					margin-bottom: af-1920-1024(51, 75)
+					@include max($bp-laptop)
+						margin-top: 44px
+						margin-bottom: 74px
+				&.rows_btns
+					gap: af-1920-1024(20, 32)
+					margin-top: af-1920-1024(20, 32)
+					align-items: center
+				&.textarea
+					margin-top: af-1920-1024(42, 60)
+					@include max($bp-laptop)
+						margin-top: 60px
+				&:has(.iagree)
+					margin-bottom: af-1920-1024(42, 60)
+					@include max($bp-laptop)
+						margin-bottom: 44px
+				textarea
+					// height: af-1920-1024(82, 154)
+					height: auto
+					field-sizing: content
+					min-height: af-1920-1024(82, 154)
+				.rating_group
+					margin-bottom: 0
+				.form_cols
+					p
+						color: $g
+						margin-bottom: af-1920-1024(7, 10)
+						@include max($bp-laptop)
+							margin-bottom: 10px
+							font-size: 9px
+					.input_field
+						border: 1px solid rgba(#000, 0)
+						&:has(.parsley-errors-list.filled)
+							input,
+							textarea
+								// border: 1px solid $r
+								color: $r
+						.parsley-errors-list
+							opacity: 0
+						input,
+						textarea
+							height: af-1920-1024(28, 40)
+							padding: 0 af-1920-1024(15, 20)
+							@include max($bp-laptop)
+								height: 40px
+								padding: 0px 20px
+								font-size: 14px
+						textarea
+							padding: af-1920-1024(9, 12) af-1920-1024(15, 20)
+							overflow: hidden
+							height: auto
+							field-sizing: content
+							min-height: af-1920-1024(28, 40)
+							@include max($bp-laptop)
+								padding: 13px 20px
+				.iagree
+					label
+						&.css-label
+							a
+								display: inline
+				button[type=submit]
+					width: 100%
+					display: inline-flex
+					align-items: center
+					justify-content: flex-start
+					padding: af-1920-1024(9, 13) af-1920-1024(15, 20)
+					background: $g
+					height: auto
+					border: 0
+					cursor: pointer
+					color: $w
+					transition: .35s
+					@include max($bp-laptop)
+						padding: 13px 20px
+					@media(hover: hover)
+						&:hover
+							transition: .35s
+							background: $r
+					svg
+						bottom: 0
+						top: 0
+						right: af-1920-1024(15, 20)
+						margin: auto
+						width: af-1920-1024(9, 19)
+						height: af-1920-1024(10, 20)
+						@include max($bp-laptop)
+							right: 20px
+							width: 11px
+							height: 11px
+					&:disabled,
+					&.disabled
+						pointer-events: none
+		.blc_file_upload
+			text-align: left
+			margin-bottom: 0
+			&.flex-end
+				text-align: right
+				.dwn
+					margin: 0 0 0 auto
+				ul
+					&.list_dwn
+						li
+							justify-content: flex-end
+			.dwn
+				margin: 0 auto 0 0
+				display: flex
+				align-items: center
+				gap: af-1920-1024(7, 10)
+				width: fit-content
+				cursor: pointer
+				color: $g
+				@include max($bp-laptop)
+					gap: 10px
+				@media(min-width: 769px)
+					&:hover
+						color: $r
+						.dwn_icon
+							--icon-fill: #{$r}
+				.dwn_icon
+					height: af-1920-1024(10, 14)
+					width: af-1920-1024(10, 15)
+					width: auto
+					display: flex
+					align-items: center
+					justify-content: center
+					--icon-fill: #{$g}
+					@include max($bp-laptop)
+						height: 15px
+						width: 15px
+					svg
+						width: 100%
+						height: 100%
+			ul
+				&.list_dwn
+					li
+						justify-content: flex-start
+
+.blc_file_upload
+	padding-left: 0
+	@include max($bp-laptop)
+		margin-top: 10px
+	.mulip
+		display: none
+	.error-message
+		margin-top: af-1920-1024(7, 10)
+		font: 400 af-1920-1024(8, 12)/150% $ff
+		letter-spacing: -0.01em
+		color: rgba(244, 0, 0, 0.60)
+	.drop
+		flex-wrap: wrap
+		a
+			&.dwn
+				padding-left: af-1920-1024(16, 24)
+				font: 400 af-1920-1024(14, 16)/125% $ff
+				letter-spacing: -0.16px
+				color: rgba(#000, 0.6)
+				white-space: nowrap
+				padding-right: 0
+				position: relative
+				cursor: pointer
+				transition: .35s
+				@include max($bp-laptop)
+					padding-left: 33px
+					font: 500 14px/18px $ff
+					letter-spacing: -0.42px
+				@media(min-width: 769px)
+					&:hover
+						transition: .35s
+						color: #003680
+				&::before
+					position: absolute
+					content: ''
+					width: 16px
+					height: 16px
+					left: 0
+					top: 0
+					bottom: 0
+					margin: auto
+					cursor: pointer
+					@include max($bp-laptop)
+						height: 25px
+						width: 25px
+		.allowed_files
+			font: 400 16px/20px $ff
+			letter-spacing: -0.16px
+			color: #728487
+		ul
+			&.list_dwn
+				left: 0
+				li
+					margin-top: 6px
+					padding-right: 0
+					font: 400 af-1920-1024(14, 16)/20px $ff
+					letter-spacing: -0.16px
+					display: flex
+					align-items: center
+					color: #000
+					@include max($bp-laptop)
+						margin-top: 10px
+						font: 400 14px/18px $ff
+						letter-spacing: -0.14px
+					&::after
+						display: none
+					span
+						margin-left: 16px
+						width: 16px
+						height: 16px
+						display: block
+						position: relative
+						cursor: pointer
+						&::after
+							@include abs
+							margin: auto
+							transform: rotate(-45deg)
+							content: ''
+							display: block
+							height: 1px
+							width: 16px
+							background: #000
+						&::before
+							@include abs
+							margin: auto
+							transform: rotate(45deg)
+							content: ''
+							display: block
+							height: 1px
+							width: 16px
+							background: #000
+					p
+						font: 400 af-1920-1024(14, 16)/20px $ff
+						color: rgba(#000, 0.6)
+						margin-bottom: 0 !important
+						@include max($bp-laptop)
+							font: 400 14px/18px
+
+.iagree
+	position: relative
+	text-align: center
+	width: 100%
+	@media(max-width: 750px)
+		margin: 1.7rem 0 0
+	input[type=checkbox].css-checkbox
+		position: absolute
+		z-index: -1000
+		left: -1000rem
+		overflow: hidden
+		clip: rect(0 0 0 0)
+		height: .1rem
+		width: .1rem
+		margin: -.1rem
+		padding: 0
+		border: 0
+
+.fancybox-inner
+	overflow: visible !important
+	min-height: 10rem
+
+.fancybox-is-open
+	.fancybox-infobar
+		opacity: 0 !important
+		visibility: hidden !important
+
+.fancybox-infobar
+	position: absolute
+	top: auto
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	width: 6rem
+	height: 6rem
+	border-radius: 100%
+	border: .3rem solid rgba(#fff, 1)
+	display: flex
+	align-items: center
+	justify-content: center
+	letter-spacing: 0.13em
+	font: 300 1.6rem/1.6rem GretaCndPro
+	color: #fff
+
+.fancybox-slide--image .fancybox-content
+	padding: 0
+	animation-timing-function: cubic-bezier(0,0,0,0)
+
+.fancybox-content
+	padding: 0
+
+.fancybox-container
+	backdrop-filter: blur(6px)
+
+.fancybox-is-open
+	.fancybox-bg
+		opacity: 1
+
+.fancybox-bg
+	background: rgba(8, 7, 5, 0.38)
+
+.fancybox-slide--html
+	padding: 0
+	.fancybox-close-small
+		top: 24px
+		right: 40px
+		width: 24px
+		height: 24px
+		display: none
+		svg
+			display: none
+		&::after
+			content: ''
+			width: 24px
+			height: 24px
+			@include abs
+			margin: auto
+
+.compensate-for-scrollbar
+	margin-right: 0 !important
+
+.hides
+	display: none
+
+#cookies-popup
+	z-index: 315
+	position: fixed
+	right: af-1920-1024(18, 36)
+	bottom: af-1920-1024(18, 36)
+	padding: 16px
+	border-radius: 10px
+	background: rgba(255, 255, 255, 0.11)
+	backdrop-filter: blur(15px)
+	display: none
+	transition: .35s
+	mix-blend-mode: difference
+	@include max($bp-laptop)
+		box-shadow: none
+		bottom: 19
+		left: 0
+		right: 0
+		margin: auto
+		width: calc( 100% - 32px )
+	&.cookie_show
+		transition: .35s
+		display: block
+	.desc
+		p
+			font: 300 16px/20px $ff
+			letter-spacing: -0.64px
+			color: #fff
+			text-align: left
+			max-width: af-1920-1024(253, 365)
+			a
+				line-height: 126%
+				color: #FFAF00
+				font-weight: 600
+				text-decoration-line: underline
+				text-decoration-style: solid
+				text-decoration-skip-ink: none
+				text-decoration-thickness: auto
+				text-underline-offset: auto
+				text-underline-position: from-font
+				transition: $default-transition
+				@media(min-width: 769px)
+					&:hover
+						transition: $default-transition
+						color: #401d13
+		button
+			padding: 6px 20px 6px 6px
+			font: 400 16px/20px $ff
+			gap: 16px
+			border: 1px solid #fff
+			color: #fff
+			margin-top: 20px

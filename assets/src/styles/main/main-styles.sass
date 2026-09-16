@@ -1,0 +1,98 @@
+.hero_section
+	min-height: 100vh
+	display: flex
+	align-items: center
+	padding: 160px 0 120px
+	background: #f6f6f2
+
+	&_content
+		max-width: 760px
+
+	&_label
+		margin-bottom: 20px
+		color: #6b6b63
+		font-size: 16px
+		line-height: 1.4
+		text-transform: uppercase
+
+	h1
+		margin-bottom: 24px
+		color: #151515
+		font-size: 64px
+		line-height: 1.05
+		font-weight: 500
+
+	p
+		max-width: 620px
+		color: #3d3d38
+		font-size: 20px
+		line-height: 1.5
+
+	@include max($bp-tablet)
+		padding: 96px 0
+
+		h1
+			font-size: 42px
+
+		p
+			font-size: 18px
+
+.main_block
+	padding: 96px 0
+	background: #fff
+
+	&_grid
+		display: grid
+		grid-template-columns: minmax(0, 1fr) minmax(280px, 420px)
+		align-items: stretch
+		gap: 48px
+
+	&_content
+		padding: 48px 0
+
+	&_label
+		margin-bottom: 16px
+		color: #6b6b63
+		font-size: 14px
+		line-height: 1.4
+		text-transform: uppercase
+
+	h2
+		max-width: 640px
+		margin-bottom: 20px
+		color: #151515
+		font-size: 44px
+		line-height: 1.12
+		font-weight: 500
+
+	p
+		max-width: 560px
+		color: #3d3d38
+		font-size: 18px
+		line-height: 1.5
+
+	&_placeholder
+		min-height: 280px
+		display: flex
+		align-items: center
+		justify-content: center
+		border: 1px dashed rgba(16, 24, 32, .24)
+		background: #f3f5f4
+
+		span
+			color: rgba(16, 24, 32, .56)
+			font-size: 18px
+			line-height: 1.4
+
+	@include max($bp-tablet)
+		padding: 72px 0
+
+		&_grid
+			grid-template-columns: 1fr
+			gap: 24px
+
+		&_content
+			padding: 0
+
+		h2
+			font-size: 34px

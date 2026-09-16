@@ -1,0 +1,224 @@
+@use "../tools/functions" as *
+
+html,
+body
+	color: $color-secondary
+	font-size: 100%
+	line-height: 1
+	font-family: $ff
+
+body
+	overflow: hidden
+	&.hdn
+		overflow: hidden !important
+	&.popover-open
+		pointer-events: none
+		[popover]
+			z-index: 10000
+			pointer-events: all
+
+.scroller
+	height: 100vh
+	overflow: auto
+	position: relative
+	z-index: 310
+
+
+main
+	margin: 0
+	background: #fff
+	position: relative
+	z-index: 310
+	min-height: 100vh
+	height: auto
+
+
+.container
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	padding-left: 15px
+	padding-right: 15px
+
+	@media (min-width: 576px)
+		max-width: 540px
+
+	@media (min-width: 768px)
+		max-width: 720px
+
+	@media (min-width: 992px)
+		max-width: 960px
+
+	@media (min-width: 1200px)
+		max-width: 1200px
+
+
+.prlx_img
+	will-change: transform
+
+.popups_container
+	padding-top: 200px
+	padding-bottom: 200px
+	background: linear-gradient(0deg,#eee 0,#eee 100%)
+	ul
+		li
+			margin-bottom: 25px
+			a
+				color: #003680
+			button
+				color: #003680
+
+.scroll-allow
+	.mCustomScrollBox
+		max-height: 100%
+	.mCSB_inside>.mCSB_container
+		margin-right: 0
+		overflow: visible
+	+ 
+		.mCSB_scrollTools
+			right: 0
+	.mCSB_scrollTools
+		right: 0
+		left: auto
+		width: 2px
+		z-index: 25
+		.mCSB_dragger
+			.mCSB_dragger_bar
+				display: none
+			.mCSB_draggerRail
+				background-color: rgba(46, 46, 46, 0.60)
+				border-radius: 8px
+		.mCSB_draggerContainer
+			border-radius: 3px
+			background: rgba(46, 46, 46, 0.12)
+
+.anim_ln_horizontal
+	height: 1px
+	max-width: 100%
+	width: 100%
+	display: block
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	margin: auto
+	bottom: auto
+	transform-origin: 0% 0%
+	&.tpm
+		top: 0
+		bottom: auto
+	&.btm
+		top: auto
+		bottom: 0
+	span
+		position: absolute
+		width: 100%
+		height: 100%
+		display: block
+		background: #000
+		transform: scaleX(0)
+		transform-origin: 0% 0%
+
+.anim_ln_vertical
+	height: 100%
+	max-width: 100%
+	width: 1px
+	display: block
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	margin: auto
+	bottom: auto
+	transform-origin: 0% 0%
+	&.md
+		left: 0
+		right: 0
+	&.rs
+		left: auto
+		right: 0
+	&.ls
+		left: 0
+		right: auto
+	span
+		position: absolute
+		width: 100%
+		height: 100%
+		display: block
+		background: #000
+		transform: scaleY(0)
+		transform-origin: 0% 0%
+
+.parsley-errors-list
+	position: absolute
+	top: 0px
+	left: 0px
+	li
+		color: #F40000
+		font: 400 14px/19px $ff
+		@include max($bp-laptop)
+			font: normal 10px/10px $ff
+
+.slr_btns
+	display: flex
+	align-items: center
+	gap: 130px
+	&.dark-btns
+		.slr_btn
+			border: 1px solid #000
+			--icon-fill: #000
+			--icon-opacity: 1
+			&.slr_btn_next
+				@media(hover: hover)
+					&:hover
+						border: 1px solid #000
+			&.slr_btn_prev
+				@media(hover: hover)
+					&:hover
+						border: 1px solid #000
+	.slr_btn
+		min-width: 60px
+		height: 36px
+		border-radius: 0
+		border: 0
+		position: relative
+		cursor: pointer
+		transition: $default-transition
+		background: 0 0
+		--icon-fill: #{$g}
+		--icon-opacity: 1
+		display: flex
+		align-items: center
+		justify-content: center
+		@media(hover: hover)
+			&:hover
+				transition: .35s
+				--icon-fill: #{$r}
+		&.swiper-button-disabled,
+		&.disabled
+			cursor: default
+			transition: $default-transition
+			opacity: 0.4
+			--icon-opacity: 0.4
+		&::after
+			display: none
+		&.slr_btn_next
+			&.swiper-button-disabled,
+			&.disabled
+				cursor: default
+				background: 0 0
+				transition: $default-transition
+				@media(hover: hover)
+					&:hover
+						transition: .35s
+						--icon-fill: #{$g}
+		&.slr_btn_prev
+			&.swiper-button-disabled,
+			&.disabled
+				cursor: default
+				transition: $default-transition
+				background: 0 0
+				@media(hover: hover)
+					&:hover
+						transition: .35s
+						--icon-fill: #{$g}

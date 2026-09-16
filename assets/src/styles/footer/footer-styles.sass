@@ -1,0 +1,173 @@
+.footer-section
+	position: relative
+	width: 100%
+	color: #606060
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+
+	a
+		color: inherit
+		text-decoration: none
+
+.bg-ivory
+	background-color: #fefcef
+
+.section
+	width: 100%
+
+.row
+	display: flex
+	flex-wrap: wrap
+	margin-right: -15px
+	margin-left: -15px
+
+.col-12,
+.col-md-6,
+.col-lg-3,
+.col-lg-6
+	position: relative
+	width: 100%
+	min-height: 1px
+	padding-right: 15px
+	padding-left: 15px
+
+.col-12
+	flex: 0 0 100%
+	max-width: 100%
+
+.pt-90
+	padding-top: 90px
+
+.pb-50
+	padding-bottom: 50px
+
+.mb-40
+	margin-bottom: 40px
+
+.mt-20
+	margin-top: 20px
+
+.ml-10
+	margin-left: 10px
+
+.no-underline
+	text-decoration: none
+
+.cache_time_mark
+	display: none
+
+.text-gray
+	color: gray
+
+.footer-top-section
+	border-top: solid 1px #efefef
+
+.footer-widget
+	.widget-title
+		font-size: 18px
+		font-weight: 700
+		line-height: 1
+		margin-bottom: 28px
+		text-transform: uppercase
+		color: #202020
+
+	p
+		font-size: 14px
+		line-height: 24px
+		margin: auto
+
+p.contact-info
+	font-size: 14px
+	line-height: 23px
+	margin-bottom: 13px
+
+	&:last-child
+		margin: 0
+
+	span
+		display: block
+		font-weight: 600
+		color: #202020
+
+	a
+		display: block
+		font-size: 14px
+		line-height: 23px
+
+		&:hover
+			color: #202020
+
+.footer-payments-image
+	text-align: left
+	font-size: 1.3em
+
+	img
+		max-width: 100%
+
+	a
+		color: #606060
+
+		&:hover
+			color: #202020
+
+ul.link-widget
+	margin: 0
+	padding: 0
+	list-style: none
+
+	li
+		margin-bottom: 11px
+		margin-left: 0 !important
+
+		&:last-child
+			margin: 0
+
+		a
+			font-size: 14px
+			line-height: 23px
+
+			&:hover
+				color: #202020
+
+.footer-bottom-section
+	border-top: 1px solid #eae9e9
+	padding: 20px 0
+
+.footer-copyright
+	text-align: left
+
+	p
+		font-size: 14px
+		line-height: 30px
+		margin: 0
+
+		a
+			font-weight: 600
+			color: #202020
+
+@media (min-width: 768px)
+	.col-md-6
+		flex: 0 0 50%
+		max-width: 50%
+
+@media (min-width: 992px)
+	.col-lg-3
+		flex: 0 0 25%
+		max-width: 25%
+
+	.col-lg-6
+		flex: 0 0 50%
+		max-width: 50%
+
+@media (min-width: 768px) and (max-width: 991px)
+	.footer-copyright
+		text-align: center
+
+	.footer-payments-image
+		margin-top: 15px
+
+@media (max-width: 767px)
+	.footer-copyright
+		text-align: center
+
+	.footer-payments-image
+		margin-top: 15px

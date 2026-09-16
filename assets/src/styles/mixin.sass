@@ -1,0 +1,27 @@
+@use "../tools/functions" as *
+
+$ff: 'Forum'
+$color-primary: #fff
+$color-secondary: #101820
+$color-tertiary: #C8102E
+$w: $color-primary
+$b: $color-secondary
+$r: $color-tertiary
+$g: #53565A
+$default-transition: .35s
+// $default-transition: .35s all cubic-bezier(0.25, 0.1, 0.25, 1)
+$image-scale-transition: transform 2.5s cubic-bezier(.19, 1, .22, 1)
+
+$bp-wide: 1920px
+$bp-desktop: 1440px
+$bp-laptop: 1024px
+$bp-tablet: 768px
+$bp-mobile: 430px
+
+@mixin abs
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	margin: auto
