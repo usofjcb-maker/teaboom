@@ -3,6 +3,7 @@ export default async function initMainEvents() {
 
 	if (productCard) {
 		initProductOptions(productCard);
+		initProductRating(productCard);
 	}
 
 	initProductTabs();
@@ -28,6 +29,44 @@ function initProductOptions(productCard) {
 			oldPrice.textContent = button.dataset.oldPrice;
 			sku.textContent = button.dataset.sku;
 		});
+	});
+}
+
+function initProductRating(productCard) {
+	const rating = productCard.querySelector('[data-product-rating]');
+	if (!rating) return;
+
+	const stars = [...rating.querySelectorAll('.product-rating-star')];
+	let selectedValue = 0;
+
+	const paintStars = (value) => {
+		stars.forEach((star) => {
+			const isActive = Number(star.dataset.ratingValue) <= value;
+
+			star.classList.toggle('is-active', isActive);
+			star.setAttribute('aria-checked', String(Number(star.dataset.ratingValue) === selectedValue));
+		});
+	};
+
+	stars.forEach((star) => {
+		const value = Number(star.dataset.ratingValue);
+
+		star.addEventListener('mouseenter', () => {
+			paintStars(value);
+		});
+
+		star.addEventListener('focus', () => {
+			paintStars(value);
+		});
+
+		star.addEventListener('click', () => {
+			selectedValue = value;
+			paintStars(selectedValue);
+		});
+	});
+
+	rating.addEventListener('mouseleave', () => {
+		paintStars(selectedValue);
 	});
 }
 
