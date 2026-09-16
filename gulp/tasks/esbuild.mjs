@@ -182,10 +182,10 @@ function getConfig(entryPoints, entryName = "bundle") {
 	return {
 		entryPoints,
 		bundle: true,
-		format: "esm",
+		format: isBuild ? "iife" : "esm",
 		target: "es2020",
 		outdir: path.resolve(paths.buildJs),
-		splitting: isBuild,
+		splitting: false,
 		minify: isBuild,
 		sourcemap: !isBuild,
 		treeShaking: isBuild,
@@ -313,7 +313,7 @@ const bundleModules = async () => {
 		}
 	}
 
-	logWithTime("ESM modules built (prod)", "green");
+	logWithTime("JS bundles built (prod)", "green");
 };
 
 // Принудительная пересборка с инвалидацией кеша

@@ -25,9 +25,13 @@ npm run make-page about
 
 Production files are generated in `assets/dist/`.
 
-Do not open `assets/dist/index.html` through `file://`. The build uses ES modules and dynamically loaded chunks, so browsers block scripts and font preloads from a local file origin.
+The production build is file-compatible, so `assets/dist/index.html` can be opened directly in a browser:
 
-Use a local HTTP server instead:
+```text
+file:///J:/openserver21/OpenServer/domains/teaboom/assets/dist/index.html
+```
+
+You can also use a local HTTP server:
 
 ```bash
 npm run build
