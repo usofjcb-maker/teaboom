@@ -3,13 +3,7 @@ import Lenis from 'lenis';
 import { gsap, ScrollTrigger } from '../animations/core/gsap';
 
 export function initLenisScroll() {
-	const scroller = document.querySelector('.scroller');
-	if (!scroller) return;
-
 	const lenis = new Lenis({
-		wrapper: scroller,
-		content: scroller,
-		eventsTarget: scroller,
 		lerp: 0.07,
 		smoothWheel: true,
 		allowNestedScroll: true,
@@ -42,29 +36,12 @@ export function initLenisScroll() {
 
 	App.bodyScrollBar = lenis;
 
-	ScrollTrigger.scrollerProxy('.scroller', {
-		scrollTop(value) {
-			if (arguments.length) App.bodyScrollBar.scrollTop = value;
-			return App.bodyScrollBar.scrollTop;
-		},
-		getBoundingClientRect() {
-			return {
-				top: 0,
-				left: 0,
-				width: window.innerWidth,
-				height: window.innerHeight
-			};
-		},
-		pinType: scroller.style.transform ? 'transform' : 'fixed'
-	});
-
 	gsap.ticker.add(time => {
 		lenis.raf(time * 1000);
 	});
 	gsap.ticker.lagSmoothing(0);
 
 	lenis.on('scroll', ScrollTrigger.update);
-	ScrollTrigger.defaults({ scroller });
 
 	lenis.on('scroll', () => {
 		const st = App.bodyScrollBar.scrollTop;
