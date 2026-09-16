@@ -538,6 +538,26 @@
 		margin-top: 60px
 		padding-top: 42px
 
+@media (min-width: 992px) and (max-width: 1199px)
+	.product-card
+		grid-template-columns: minmax(0, 460px) minmax(0, 1fr)
+		gap: 40px
+
+	.product-image-wrap
+		min-height: 460px
+		padding: 40px
+
+	.product-buy
+		grid-template-columns: 1fr
+
+	.product-sku,
+	.product-cart-button
+		grid-column: auto
+		grid-row: auto
+
+	.product-cart-button
+		width: 100%
+
 @media (max-width: 575px)
 	.product-page
 		padding: 32px 0 56px
