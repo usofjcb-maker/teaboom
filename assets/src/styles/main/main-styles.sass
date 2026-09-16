@@ -1,98 +1,274 @@
-.hero_section
-	min-height: 100vh
-	display: flex
-	align-items: center
-	padding: 160px 0 120px
-	background: #f6f6f2
-
-	&_content
-		max-width: 760px
-
-	&_label
-		margin-bottom: 20px
-		color: #6b6b63
-		font-size: 16px
-		line-height: 1.4
-		text-transform: uppercase
-
-	h1
-		margin-bottom: 24px
-		color: #151515
-		font-size: 64px
-		line-height: 1.05
-		font-weight: 500
-
-	p
-		max-width: 620px
-		color: #3d3d38
-		font-size: 20px
-		line-height: 1.5
-
-	@include max($bp-tablet)
-		padding: 96px 0
-
-		h1
-			font-size: 42px
-
-		p
-			font-size: 18px
-
-.main_block
-	padding: 96px 0
+.product-page
+	padding: 72px 0 96px
 	background: #fff
 
-	&_grid
-		display: grid
-		grid-template-columns: minmax(0, 1fr) minmax(280px, 420px)
-		align-items: stretch
-		gap: 48px
+.product-card
+	display: grid
+	grid-template-columns: minmax(0, 560px) minmax(0, 1fr)
+	gap: 64px
+	align-items: start
 
-	&_content
-		padding: 48px 0
+.product-media
+	position: sticky
+	top: 24px
 
-	&_label
-		margin-bottom: 16px
-		color: #6b6b63
-		font-size: 14px
+.product-image-wrap
+	display: flex
+	align-items: center
+	justify-content: center
+	min-height: 560px
+	padding: 56px
+	border: 1px solid #efefef
+	background: #fefcef
+
+.product-image
+	width: 100%
+	max-width: 420px
+	height: auto
+	object-fit: contain
+	mix-blend-mode: multiply
+
+.product-info
+	padding-top: 12px
+	color: #202020
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+
+.product-path
+	display: flex
+	flex-wrap: wrap
+	gap: 8px
+	margin-bottom: 18px
+	color: #777
+	font-size: 13px
+	line-height: 1.4
+
+	a
+		color: #606060
+		transition: color .2s
+
+		&:hover
+			color: #202020
+
+.product-category
+	margin-bottom: 10px
+	color: #888
+	font-size: 14px
+	line-height: 1.45
+
+.product-title
+	margin-bottom: 12px
+	color: #202020
+	font-size: 42px
+	font-weight: 600
+	line-height: 1.12
+
+.product-rating
+	display: flex
+	align-items: center
+	gap: 14px
+	margin-bottom: 34px
+	color: #c9c9c9
+	font-size: 18px
+	line-height: 1
+
+	a
+		color: #777
+		font-size: 13px
 		line-height: 1.4
-		text-transform: uppercase
+		text-decoration: underline
+		text-underline-offset: 3px
+
+		&:hover
+			color: #202020
+
+.product-options
+	margin-bottom: 28px
+
+.product-options-title
+	margin-bottom: 12px
+	color: #202020
+	font-size: 14px
+	font-weight: 700
+	line-height: 1.4
+	text-transform: uppercase
+
+.product-option-list
+	display: grid
+	grid-template-columns: repeat(4, minmax(0, 1fr))
+	gap: 10px
+
+.product-option
+	min-height: 48px
+	padding: 10px 14px
+	border: 1px solid #dcdcdc
+	background: #fff
+	color: #444
+	cursor: pointer
+	font-size: 15px
+	font-weight: 600
+	line-height: 1.2
+	transition: border-color .2s, background-color .2s, color .2s, box-shadow .2s
+
+	&:hover
+		border-color: #202020
+		color: #202020
+
+	&.is-active
+		border-color: #202020
+		background: #202020
+		color: #fff
+		box-shadow: 0 8px 20px rgba(32, 32, 32, .12)
+
+.product-buy
+	display: grid
+	grid-template-columns: 1fr auto
+	gap: 12px 24px
+	align-items: end
+	margin-bottom: 34px
+	padding: 24px
+	border: 1px solid #efefef
+	background: #fafafa
+
+.product-price
+	display: flex
+	align-items: baseline
+	gap: 14px
+
+.product-old-price
+	color: #9a9a9a
+	font-size: 18px
+	line-height: 1
+	text-decoration: line-through
+
+.product-current-price
+	color: #202020
+	font-size: 34px
+	font-weight: 700
+	line-height: 1
+
+.product-sku
+	grid-column: 1
+	color: #777
+	font-size: 14px
+	line-height: 1.4
+
+.product-cart-button
+	grid-column: 2
+	grid-row: 1 / span 2
+	min-width: 178px
+	min-height: 52px
+	padding: 14px 24px
+	border: 0
+	background: #f5d730
+	color: #202020
+	cursor: pointer
+	font-size: 14px
+	font-weight: 700
+	line-height: 1
+	text-transform: uppercase
+	transition: background-color .2s, color .2s, transform .2s
+
+	&:hover
+		background: #202020
+		color: #f5d730
+		transform: translateY(-1px)
+
+	&:active
+		transform: translateY(0)
+
+.product-summary
+	padding: 26px 28px
+	border-left: 4px solid #f5d730
+	background: #fefcef
 
 	h2
-		max-width: 640px
-		margin-bottom: 20px
-		color: #151515
-		font-size: 44px
-		line-height: 1.12
-		font-weight: 500
+		margin-bottom: 14px
+		color: #202020
+		font-size: 22px
+		font-weight: 700
+		line-height: 1.25
 
 	p
-		max-width: 560px
-		color: #3d3d38
-		font-size: 18px
+		margin-bottom: 16px
+		color: #444
+		font-size: 16px
+		line-height: 1.65
+
+	ul
+		display: grid
+		gap: 9px
+		margin: 0
+		padding: 0
+		list-style: none
+
+	li
+		position: relative
+		padding-left: 18px
+		color: #444
+		font-size: 15px
 		line-height: 1.5
 
-	&_placeholder
-		min-height: 280px
-		display: flex
-		align-items: center
-		justify-content: center
-		border: 1px dashed rgba(16, 24, 32, .24)
-		background: #f3f5f4
+		&::before
+			content: ""
+			position: absolute
+			top: .7em
+			left: 0
+			width: 6px
+			height: 6px
+			border-radius: 50%
+			background: #f5d730
 
-		span
-			color: rgba(16, 24, 32, .56)
-			font-size: 18px
-			line-height: 1.4
+@media (max-width: 991px)
+	.product-page
+		padding: 48px 0 72px
 
-	@include max($bp-tablet)
-		padding: 72px 0
+	.product-card
+		grid-template-columns: 1fr
+		gap: 36px
 
-		&_grid
-			grid-template-columns: 1fr
-			gap: 24px
+	.product-media
+		position: static
 
-		&_content
-			padding: 0
+	.product-image-wrap
+		min-height: 420px
 
-		h2
-			font-size: 34px
+	.product-option-list
+		grid-template-columns: repeat(2, minmax(0, 1fr))
+
+@media (max-width: 575px)
+	.product-page
+		padding: 32px 0 56px
+
+	.product-card
+		gap: 28px
+
+	.product-image-wrap
+		min-height: 300px
+		padding: 28px
+
+	.product-title
+		font-size: 32px
+
+	.product-rating
+		margin-bottom: 26px
+
+	.product-buy
+		grid-template-columns: 1fr
+		padding: 20px
+
+	.product-price
+		flex-wrap: wrap
+
+	.product-current-price
+		font-size: 30px
+
+	.product-sku,
+	.product-cart-button
+		grid-column: auto
+		grid-row: auto
+
+	.product-cart-button
+		width: 100%
+
+	.product-summary
+		padding: 22px

@@ -5,28 +5,62 @@
 		//=include template/header.html
 		
 		<main role="main" id="page-content">
-			<section class="hero_section" id="main-block">
+			<section class="product-page" id="main-block" aria-labelledby="product-title">
 				<div class="container">
-					<div class="hero_section_content">
-						<p class="hero_section_label">Gulp static starter</p>
-						<h1>Static site starter</h1>
-						<p>Clean build with Sass, Nunjucks-style includes, esbuild, Lenis, GSAP and page generator.</p>
-					</div>
-				</div>
-			</section>
+					<article class="product-card" data-product-card>
+						<div class="product-media">
+							<div class="product-image-wrap">
+								<img src="img/product/ananasovij-ulun.jpg" alt="Ананасовый улун" class="product-image">
+							</div>
+						</div>
 
-			<section class="main_block">
-				<div class="container">
-					<div class="main_block_grid">
-						<div class="main_block_content">
-							<p class="main_block_label">Main block</p>
-							<h2>Place future sections here</h2>
-							<p>This is a test content block. Copy it, replace it with a layout component, or remove it after development starts.</p>
+						<div class="product-info">
+							<nav class="product-path" aria-label="Категория товара">
+								<a href="/category-root">Каталог</a>
+								<span>/</span>
+								<a href="/category-ulun">Улун</a>
+								<span>/</span>
+								<a href="/category-aromatizirovannyj-ulun">Ароматизированный улун</a>
+							</nav>
+
+							<p class="product-category">Китайский светлый ароматизированный улун</p>
+							<h1 class="product-title" id="product-title">Ананасовый улун</h1>
+
+							<div class="product-rating" aria-label="Отзывы">
+								<span aria-hidden="true">☆☆☆☆☆</span>
+								<a href="#reviews">оставить отзыв</a>
+							</div>
+
+							<div class="product-options" aria-label="Выбор фасовки">
+								<p class="product-options-title">Фасовка</p>
+								<div class="product-option-list" role="list">
+									<button class="product-option is-active" type="button" data-weight="100 г" data-sku="01306" data-old-price="349,20 ₽" data-price="326,40 ₽" aria-pressed="true">100 г</button>
+									<button class="product-option" type="button" data-weight="500 г" data-sku="01307" data-old-price="1 646 ₽" data-price="1 432 ₽" aria-pressed="false">500 г</button>
+									<button class="product-option" type="button" data-weight="1000 г" data-sku="01308" data-old-price="2 592 ₽" data-price="2 064 ₽" aria-pressed="false">1000 г</button>
+									<button class="product-option" type="button" data-weight="5000 г" data-sku="01309" data-old-price="8 710 ₽" data-price="6 320 ₽" aria-pressed="false">5000 г</button>
+								</div>
+							</div>
+
+							<div class="product-buy">
+								<div class="product-price" aria-live="polite">
+									<span class="product-old-price" data-product-old-price>349,20 ₽</span>
+									<strong class="product-current-price" data-product-price>326,40 ₽</strong>
+								</div>
+								<p class="product-sku">арт: <span data-product-sku>01306</span></p>
+								<button class="product-cart-button" type="button">В корзину</button>
+							</div>
+
+							<section class="product-summary" aria-labelledby="product-summary-title">
+								<h2 id="product-summary-title">Коротко о чае</h2>
+								<p>Состав: китайский бирюзовый чай, цукаты, натуральные ароматические масла. Светлый Фуцзяньский улун с ароматом ананаса.</p>
+								<ul>
+									<li>Вкус: светлый улун и яркая ананасовая нота.</li>
+									<li>Заваривание: 1-3 мин, температура воды 80-85 °.</li>
+									<li>Происхождение: Китай, Фуцзянь.</li>
+								</ul>
+							</section>
 						</div>
-						<div class="main_block_placeholder">
-							<span>Content slot</span>
-						</div>
-					</div>
+					</article>
 				</div>
 			</section>
 		</main>
