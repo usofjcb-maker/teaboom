@@ -1,26 +1,45 @@
 export default async function initDefaultSlider() {
-	const el = document.querySelector('.default_slr');
-	if (!el) return;
+	const sliders = document.querySelectorAll('.default_slr');
+	if (!sliders.length) return;
 
-	const [{ default: Swiper }] = await Promise.all([import('swiper')]);
+	const [{ default: Swiper }, { Navigation }] = await Promise.all([
+		import('swiper'),
+		import('swiper/modules')
+	]);
 
 	await import('swiper/css');
+	await import('swiper/css/navigation');
 
-	return new Swiper(el, {
-		loop: false,
-		slidesPerView: 1,
-		spaceBetween: 20,
-		speed: 800,
-		watchOverflow: true,
-		observer: true,
-		observeParents: true,
-		breakpoints: {
-			768: {
-				slidesPerView: 2,
+	return [...sliders].map((el) => {
+		const sliderWrap = el.closest('.related-products') || el.parentElement;
+
+		return new Swiper(el, {
+			modules: [Navigation],
+			loop: false,
+			slidesPerView: 1.15,
+			spaceBetween: 16,
+			speed: 700,
+			watchOverflow: true,
+			observer: true,
+			observeParents: true,
+			navigation: {
+				prevEl: sliderWrap?.querySelector('.related-products-prev'),
+				nextEl: sliderWrap?.querySelector('.related-products-next'),
 			},
-			1024: {
-				slidesPerView: 3,
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+					spaceBetween: 18,
+				},
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1200: {
+					slidesPerView: 4,
+					spaceBetween: 24,
+				},
 			},
-		},
+		});
 	});
 }

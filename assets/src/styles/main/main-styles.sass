@@ -381,6 +381,128 @@
 		background: #202020
 		color: #f5d730
 
+.related-products
+	margin-top: 76px
+	padding-top: 52px
+	border-top: 1px solid #efefef
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+
+.related-products-head
+	display: flex
+	align-items: center
+	justify-content: space-between
+	gap: 24px
+	margin-bottom: 28px
+
+	h2
+		color: #202020
+		font-size: 30px
+		font-weight: 700
+		line-height: 1.25
+
+.related-products-controls
+	display: flex
+	align-items: center
+	gap: 10px
+
+.related-products-button
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	width: 42px
+	height: 42px
+	border: 1px solid #dcdcdc
+	border-radius: 50%
+	background: #fff
+	color: #202020
+	cursor: pointer
+	transition: background-color .2s, border-color .2s, color .2s, opacity .2s
+
+	i
+		font-size: 18px
+		line-height: 1
+
+	&:hover
+		border-color: #202020
+		background: #202020
+		color: #f5d730
+
+	&.swiper-button-disabled
+		cursor: default
+		opacity: .4
+
+		&:hover
+			border-color: #dcdcdc
+			background: #fff
+			color: #202020
+
+.related-products-prev
+	i
+		transform: rotate(90deg)
+
+.related-products-next
+	i
+		transform: rotate(-90deg)
+
+.related-products-slider
+	overflow: hidden
+	padding: 2px
+
+.related-product-card
+	display: flex
+	flex-direction: column
+	min-height: 100%
+	border: 1px solid #efefef
+	background: #fff
+	color: #202020
+	transition: border-color .2s, box-shadow .2s, transform .2s
+
+	&:hover
+		border-color: #dcdcdc
+		box-shadow: 0 14px 34px rgba(32, 32, 32, .08)
+		transform: translateY(-2px)
+
+.related-product-image
+	display: flex
+	align-items: center
+	justify-content: center
+	aspect-ratio: 1 / 1
+	padding: 28px
+	background: #fefcef
+
+	img
+		width: 100%
+		height: 100%
+		object-fit: contain
+		mix-blend-mode: multiply
+
+.related-product-category
+	margin: 18px 18px 8px
+	color: #888
+	font-size: 13px
+	line-height: 1.35
+
+.related-product-title
+	min-height: 48px
+	margin: 0 18px 14px
+	color: #202020
+	font-size: 17px
+	font-weight: 700
+	line-height: 1.35
+
+.related-product-price
+	margin: auto 18px 20px
+	color: #202020
+	font-size: 18px
+	font-weight: 700
+	line-height: 1.3
+
+	del
+		margin-right: 8px
+		color: #999
+		font-size: 15px
+		font-weight: 400
+
 @media (max-width: 991px)
 	.product-page
 		padding: 48px 0 72px
@@ -403,6 +525,10 @@
 
 	.product-spec-list
 		grid-template-columns: 1fr
+
+	.related-products
+		margin-top: 60px
+		padding-top: 42px
 
 @media (max-width: 575px)
 	.product-page
@@ -474,3 +600,21 @@
 
 	.product-reviews-empty
 		padding: 24px
+
+	.related-products
+		margin-top: 48px
+		padding-top: 34px
+
+	.related-products-head
+		align-items: flex-start
+		flex-direction: column
+		gap: 16px
+
+		h2
+			font-size: 25px
+
+	.related-products-controls
+		align-self: flex-end
+
+	.related-product-image
+		padding: 22px
