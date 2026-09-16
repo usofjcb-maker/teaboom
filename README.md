@@ -21,6 +21,25 @@ npm run preview
 npm run make-page about
 ```
 
+## Previewing The Build
+
+Production files are generated in `assets/dist/`.
+
+Do not open `assets/dist/index.html` through `file://`. The build uses ES modules and dynamically loaded chunks, so browsers block scripts and font preloads from a local file origin.
+
+Use a local HTTP server instead:
+
+```bash
+npm run build
+npm run preview
+```
+
+Then open:
+
+```text
+http://localhost:5050
+```
+
 ## Project Structure
 
 ```text
