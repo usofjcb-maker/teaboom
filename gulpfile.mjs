@@ -309,11 +309,14 @@ gulp.task('sprite:copy', () => {
 });
 
 gulp.task('favicon', () => {
-	return gulp.src('assets/src/favicon.ico', {
+	return deleteAsync([
+		`${paths.build}/favicon.ico`,
+		`${paths.buildImg}/favicon/**`
+	], { force: true }).then(() => gulp.src('assets/src/img/favicon/favicon.ico', {
 		encoding: false,
 		allowEmpty: true
 	})
-		.pipe(gulp.dest(paths.build));
+		.pipe(gulp.dest(`${paths.buildImg}/favicon`)));
 });
 
 // Watch
