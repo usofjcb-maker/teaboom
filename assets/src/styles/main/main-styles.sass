@@ -283,6 +283,16 @@
 	p
 		margin-bottom: 18px
 
+	a
+		color: #202020
+		text-decoration: underline
+		text-decoration-color: #f5d730
+		text-decoration-thickness: 2px
+		text-underline-offset: 3px
+
+		&:hover
+			color: #606060
+
 	h3
 		margin: 28px 0 14px
 		color: #202020
@@ -316,32 +326,31 @@
 
 .product-spec-list
 	display: grid
-	grid-template-columns: repeat(2, minmax(0, 1fr))
+	gap: 10px
 	margin: 0
-	border-top: 1px solid #ededed
-	border-left: 1px solid #ededed
+	padding: 0
+	list-style: none
 
-	div
-		display: grid
-		grid-template-columns: minmax(150px, .8fr) minmax(0, 1fr)
-		min-height: 50px
-		border-right: 1px solid #ededed
-		border-bottom: 1px solid #ededed
+	li
+		position: relative
+		padding-left: 18px
+		color: #444
+		font-size: 16px
+		line-height: 1.55
 
-	dt,
-	dd
-		margin: 0
-		padding: 12px 14px
-		font-size: 14px
-		line-height: 1.45
+		&::before
+			content: ""
+			position: absolute
+			top: .75em
+			left: 0
+			width: 6px
+			height: 6px
+			border-radius: 50%
+			background: #f5d730
 
-	dt
-		color: #606060
-		background: #fafafa
-		font-weight: 700
-
-	dd
+	span
 		color: #202020
+		font-weight: 700
 
 .product-reviews-empty
 	padding: 34px
@@ -390,9 +399,6 @@
 
 	.product-tabs
 		margin-top: 56px
-
-	.product-spec-list
-		grid-template-columns: 1fr
 
 @media (max-width: 575px)
 	.product-page
@@ -451,16 +457,6 @@
 		& + &
 			margin-left: 0
 			margin-top: -1px
-
-	.product-spec-list
-		div
-			grid-template-columns: 1fr
-
-		dt
-			padding-bottom: 4px
-
-		dd
-			padding-top: 4px
 
 	.product-reviews-empty
 		padding: 24px
