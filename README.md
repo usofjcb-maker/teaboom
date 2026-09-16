@@ -1,96 +1,78 @@
-# Static Site Starter
+# Teaboom Product Card
 
-Clean Gulp starter for multi-page static websites.
+Тестовое задание для HTML-верстальщика / Frontend-верстальщика: карточка товара интернет-магазина Teaboom.ru на примере товара «Ананасовый улун».
 
-## Stack
+## Что сделано
 
-- Gulp 5
-- Nunjucks-style includes via `gulp-include`
+- верхняя часть карточки товара с изображением, названием, категорией, фасовками, артикулом, ценой и коротким описанием;
+- переключение фасовки с обновлением цены, старой цены, артикула и активного состояния;
+- интерактивный рейтинг со звездами;
+- табы «описание», «свойства», «отзывы»;
+- блок похожих и сопутствующих товаров на Swiper;
+- адаптивная верстка для desktop, tablet и mobile;
+- хедер и футер в стилистике Teaboom.ru.
+
+## Стек
+
+- HTML5
 - Sass
-- esbuild with one JS bundle per page
-- Lenis + GSAP ScrollTrigger
-- Swiper, Fancybox, Inputmask, Parsley, Selectize
+- JavaScript
+- Gulp
+- esbuild
+- Swiper
+- Lenis
 
-## Commands
+## Запуск
+
+Установить зависимости:
 
 ```bash
 npm install
-npm run dev
-npm run build
-npm run preview
-npm run make-page about
 ```
 
-## Previewing The Build
+Запустить режим разработки:
 
-Production files are generated in `assets/dist/`.
+```bash
+npm run dev
+```
 
-The production build is file-compatible, so `assets/dist/index.html` can be opened directly in a browser:
+Собрать production-версию:
+
+```bash
+npm run build
+```
+
+Собранная страница появится в `assets/dist/`.
+
+## Просмотр сборки
+
+Сборку можно открыть напрямую в браузере:
 
 ```text
 file:///J:/openserver21/OpenServer/domains/teaboom/assets/dist/index.html
 ```
 
-You can also use a local HTTP server:
+Или через локальный сервер:
 
 ```bash
-npm run build
 npm run preview
 ```
 
-Then open:
+После этого открыть:
 
 ```text
 http://localhost:5050
 ```
 
-## Project Structure
+## Структура
 
 ```text
-assets/src/
-  index.html              Source pages
-  template/               Shared HTML partials and per-page heads
-  styles/                 Base styles and per-page Sass entries
-  js/
-    pages/                Per-page JS entry points
-    common/               Reusable UI initializers
-    events/               DOM event modules
-    layout/               Layout measurements and CSS vars
-    lib/                  Scroll, animation, sliders
-    utils/                Small utilities
-  img/                    Source images, icons and sprite input
-  fonts/                  Source .woff2 fonts
-  video/                  Optional source video files
-gulp/                     Build tasks and utilities
-make-page-templates/      Templates used by npm run make-page
+assets/src/index.html          Основная страница
+assets/src/template/           Общие HTML-фрагменты
+assets/src/styles/             Sass-стили
+assets/src/js/                 JavaScript
+assets/src/img/                Изображения и favicon
+assets/src/fonts/              Шрифты
+assets/dist/                   Production-сборка
+gulp/                          Задачи сборки
 ```
-
-## Page Workflow
-
-Create a page:
-
-```bash
-npm run make-page about
-```
-
-This creates:
-
-- `assets/src/about.html`
-- `assets/src/template/head-about.html`
-- `assets/src/js/pages/about.js`
-- `assets/src/js/events/about-events.js`
-- `assets/src/js/lib/animations/pages-anim/about-anim.js`
-- `assets/src/styles/about/about.sass`
-- `assets/src/styles/about/about-styles.sass`
-
-Each page gets its own CSS and JS bundle.
-
-## Build Output
-
-Generated files are intentionally ignored:
-
-- `assets/build/` for local development
-- `assets/dist/` for production builds
-- `cache/` for build caches
-
-Deploy settings are read from `.env`. Use `.env.example` as a starting point.

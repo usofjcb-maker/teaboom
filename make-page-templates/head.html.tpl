@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8" />
-	<title>${PageKey} | Static Site Starter</title>
+	<title>${PageKey} | Teaboom Product Card</title>
 
 	<link rel="preload" as="font" crossorigin type="font/woff2" href="fonts/Forum/Forum-Regular.woff2">
 
@@ -19,7 +19,7 @@
 
 	<meta property="og:locale" content="ru" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="${PageKey} | Static Site Starter" />
+	<meta property="og:title" content="${PageKey} | Teaboom Product Card" />
 	<meta property="og:description" content="${PageKey} page" />
 
 	<link rel="stylesheet" href="css/header.min.css?v=163426"/>

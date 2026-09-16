@@ -1,7 +1,7 @@
 {
-	"name": "static-site-starter",
+	"name": "teaboom-product-card",
 	"version": "2.0.0",
-	"description": "Clean Gulp starter for static websites",
+	"description": "Teaboom product card test assignment",
 	"author": "denis.avilov@gmail.com",
 	"license": "MIT",
 	"type": "module",
