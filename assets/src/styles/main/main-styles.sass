@@ -218,6 +218,159 @@
 			border-radius: 50%
 			background: #f5d730
 
+.product-tabs
+	margin-top: 72px
+	color: #202020
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+
+.product-tabs-title
+	margin-bottom: 22px
+	color: #202020
+	font-size: 26px
+	font-weight: 700
+	line-height: 1.25
+
+.product-tabs-nav
+	display: flex
+	flex-wrap: wrap
+	gap: 0
+	margin-bottom: 32px
+	border-bottom: 1px solid #e6e6e6
+
+.product-tab-link
+	position: relative
+	display: inline-flex
+	align-items: center
+	min-height: 52px
+	padding: 0 28px
+	color: #606060
+	background: #fff
+	border: 1px solid #e6e6e6
+	border-bottom: 0
+	font-size: 14px
+	font-weight: 700
+	line-height: 1
+	text-transform: uppercase
+	transition: color .2s, background-color .2s
+
+	& + &
+		margin-left: -1px
+
+	&:hover
+		color: #202020
+
+	&.is-active
+		color: #202020
+		background: #fefcef
+
+		&::after
+			content: ""
+			position: absolute
+			left: -1px
+			right: -1px
+			bottom: -1px
+			height: 3px
+			background: #f5d730
+
+.product-tabs-panels
+	max-width: 920px
+
+.product-tab-panel
+	color: #444
+	font-size: 16px
+	line-height: 1.7
+
+	p
+		margin-bottom: 18px
+
+	h3
+		margin: 28px 0 14px
+		color: #202020
+		font-size: 22px
+		font-weight: 700
+		line-height: 1.25
+
+		&:first-child
+			margin-top: 0
+
+.product-benefits
+	display: grid
+	gap: 10px
+	margin: 0 0 28px
+	padding: 0
+	list-style: none
+
+	li
+		position: relative
+		padding-left: 18px
+
+		&::before
+			content: ""
+			position: absolute
+			top: .75em
+			left: 0
+			width: 6px
+			height: 6px
+			border-radius: 50%
+			background: #f5d730
+
+.product-spec-list
+	display: grid
+	grid-template-columns: repeat(2, minmax(0, 1fr))
+	margin: 0
+	border-top: 1px solid #ededed
+	border-left: 1px solid #ededed
+
+	div
+		display: grid
+		grid-template-columns: minmax(150px, .8fr) minmax(0, 1fr)
+		min-height: 50px
+		border-right: 1px solid #ededed
+		border-bottom: 1px solid #ededed
+
+	dt,
+	dd
+		margin: 0
+		padding: 12px 14px
+		font-size: 14px
+		line-height: 1.45
+
+	dt
+		color: #606060
+		background: #fafafa
+		font-weight: 700
+
+	dd
+		color: #202020
+
+.product-reviews-empty
+	padding: 34px
+	background: #fefcef
+	border-left: 4px solid #f5d730
+
+	h3
+		margin-top: 0
+
+	p
+		max-width: 620px
+
+.product-review-button
+	min-height: 48px
+	padding: 13px 24px
+	border: 0
+	background: #f5d730
+	color: #202020
+	cursor: pointer
+	font-size: 14px
+	font-weight: 700
+	line-height: 1
+	text-transform: uppercase
+	transition: background-color .2s, color .2s
+
+	&:hover
+		background: #202020
+		color: #f5d730
+
 @media (max-width: 991px)
 	.product-page
 		padding: 48px 0 72px
@@ -234,6 +387,12 @@
 
 	.product-option-list
 		grid-template-columns: repeat(2, minmax(0, 1fr))
+
+	.product-tabs
+		margin-top: 56px
+
+	.product-spec-list
+		grid-template-columns: 1fr
 
 @media (max-width: 575px)
 	.product-page
@@ -272,3 +431,36 @@
 
 	.product-summary
 		padding: 22px
+
+	.product-tabs
+		margin-top: 44px
+
+	.product-tabs-title
+		font-size: 24px
+
+	.product-tabs-nav
+		display: grid
+		grid-template-columns: 1fr
+		margin-bottom: 24px
+		border-bottom: 0
+
+	.product-tab-link
+		justify-content: center
+		border-bottom: 1px solid #e6e6e6
+
+		& + &
+			margin-left: 0
+			margin-top: -1px
+
+	.product-spec-list
+		div
+			grid-template-columns: 1fr
+
+		dt
+			padding-bottom: 4px
+
+		dd
+			padding-top: 4px
+
+	.product-reviews-empty
+		padding: 24px
