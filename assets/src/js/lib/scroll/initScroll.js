@@ -3,11 +3,13 @@ import { initLenisScroll } from "./lenisScroll.js";
 import initScrollTo from "./initScrollTo.js";
 
 export default function initScroll() {
-  if (App.WINDOW_W > App.BREAKPOINT_DESKTOP) {
+  const isDesktop = App.WINDOW_W > App.BREAKPOINT_DESKTOP;
+
+  if (isDesktop) {
     initLenisScroll();
     initScrollTo(true);
   } else {
-    // мобилка
+    // Планшет и мобильные устройства: нативный window scroll без Lenis.
     App.HEADER_FOR_SCROLL && (App.HEADER_FOR_SCROLL.style.position = "fixed");
     initScrollTo(false);
 
